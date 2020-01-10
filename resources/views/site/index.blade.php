@@ -19,7 +19,6 @@
     <body>
         <div class="All">
             <!--Inicio do Menu-->
-
             <div class="Menu">
                 <nav class="navbar fixed-top .navbar-collapse navbar-expand-lg navbar">
                     <a href="#">
@@ -63,19 +62,20 @@
     </div>
 </div>
 </div>
-        <div class="Container Exchange">
-            <div class="Content Exchange">
-                <div class="col-lg-12 col-md-10">
+<div class="AllCalculadora" id="calculadora">
+        <div class="Container">
+            <div class="Content Exchange d-flex justify-content-center">
+                <div class="col-lg-12 col-md-12">
                 <div class="row">
                     <h1><span class="ExchangeTitle">Exchange</span> Calculadora</h1>
                 </div>
                 <div class="row">
                     <p>Mais uma ferramenta disponivel no Portal Exchange Inforce</p>
                 </div>
-                <div class="Calculadora" id="calculadora">
+                <div class="Calculadora">
                 <div class="row">
                     <form class="form-horizontal" id="form-conversor">
-                    <input placeholder="quantidade" id="value" name="value" required="true" class="FormataCampo">
+                    <input placeholder="quantidade" id="value" name="value" type="text" required="required" name="numbers" pattern="[0-9]+$"  class="FormataCampo">
                         <select name="base" required="true" id="base" class="FormataCampo custom-select ">
                             <option  value="" disabled selected> moeda</option>
                             <option value="USD" id="USD"> USD </option>
@@ -99,14 +99,18 @@
                     </form>
                 </div>
                 <div class="row">
-                    <h3>Cotação:</h3>
-                    <p id="cotacao"></p>
+                    <p class="Resultado">Cotação:</p>
+                    <p class="Cotacao" id="cotacao">...</p>
                 </div>
                 <div class="row">
-                    <h3>Resultado:</h3>
-                    <p id="resultado"></p>
+                    <p class="Resultado">Resultado:</p>
+                    <p class="Cotacao" id="resultado">...</p>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+    <div class="RealTime" id="realtime">
             <div class="row">
                 <h1><span class="ExchangeTitle">Exchange</span> RealTime</h1>
             </div>
@@ -116,10 +120,10 @@
                 </div>
             </div>
         </div>
+    </div>
         </div>
     </div>
     </div>
-   
     <script>
         $("#form-conversor").submit(function (e) {
             e.preventDefault();
@@ -127,8 +131,8 @@
                 url: "{{ route('converter') }}",
                 data: $("#form-conversor").serialize(),
                 success: function (resposta) {
-                    $("#resultado").html(resposta.value);
-                    $("#cotacao").html(resposta.currency);
+                    $("#resultado").html('R$ ' + resposta.value);
+                    $("#cotacao").html('R$ '+ resposta.currency);
                 }
             });
         });
