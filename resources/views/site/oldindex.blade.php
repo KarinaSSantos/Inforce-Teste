@@ -5,50 +5,28 @@
         </title>
     <meta name="description" content="Consultoria e Desenvolvimento Web especializada em Portais, Sites Personalizados, Softwares, Apps e Estratégias de Marketing Digital." />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <link rel="stylesheet" href="<?php echo asset('assets/css/style.css')?>" type="text/css">
 
     <script type="text/javascript" src="<?php echo asset('assets/js/script.js')?>"></script>
-
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+   
     </head>
     <body>
         <div class="All">
-            <!--Inicio do Menu-->
-
-            <div class="Menu">
-                <nav class="navbar fixed-top .navbar-collapse navbar-expand-lg navbar">
-                    <a href="#">
-                        <div class="navbar-brand"></div>
-                      </a>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                      <ul class="navbar-nav">
-                        <li class="nav-item active">
-                          <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#realtime">Exchange RealTime</a>
-                        </li>
-                        <li class="nav-item calculadoramenu">
-                            <a class="nav-link" href="#calculadora">Calculadora</a>
-                          </li>
-                      </ul>
-                    </div>
-                  </nav>
-            </div>
-            <!--Fim do Menu-->
             <div class="col-lg-12 col-md-10 col-sm-12">
-        <div class="Container Banner" id="home">
+        <div class="Container Banner ">
             <div class="Content Home">
                 <div class="col-lg-6 col-md-6">
-                <div class="row Conheca">
+                <div class="row">
         <p> Conheça nosso Portal Exchange, ele te deixa por dentro da cotação das principais moedas em tempo real, e mostra as melhores noticias sobre soluções inovadoras feitas aqui no lab da Inforce!</p>
                 </div>
-                <div class="row Conheca">
+                <div class="row">
                     <h1>
                         Quer simular uma cotação e não sabe como? Conheça nossa calculadora de Câmbio.
                     </h1>
@@ -63,7 +41,7 @@
     </div>
 </div>
 </div>
-        <div class="Container Exchange">
+        <div class="Container Exchange" id="calculadora">
             <div class="Content Exchange">
                 <div class="col-lg-12 col-md-10">
                 <div class="row">
@@ -72,11 +50,11 @@
                 <div class="row">
                     <p>Mais uma ferramenta disponivel no Portal Exchange Inforce</p>
                 </div>
-                <div class="Calculadora" id="calculadora">
+                <div class="Calculadora">
                 <div class="row">
                     <form class="form-horizontal" id="form-conversor">
-                    <input placeholder="quantidade" id="value" name="value" required="true" class="FormataCampo">
-                        <select name="base" required="true" id="base" class="FormataCampo custom-select ">
+                    <input placeholder="quantidade" id="value" name="value" required="true">
+                        <select name="base" required="true" id="base" class="FormataCampo">
                             <option  value="" disabled selected> moeda</option>
                             <option value="USD" id="USD"> USD </option>
                             <option value="BRL" id="BRL"> BRL </option>
@@ -89,7 +67,7 @@
                             <path fill-rule="evenodd" d="M4.5 7a.5.5 0 01.5-.5h10.5a.5.5 0 010 1H5a.5.5 0 01-.5-.5z" clip-rule="evenodd"></path>
                           </svg>
                           <!--fim-->
-                        <select name="to" required="true" id="to" class="FormataCampo custom-select">
+                        <select name="to" required="true" id="to" class="FormataCampo">
                             <option  value="" disabled selected> moeda</option>
                             <option value="USD" id="USD"> USD </option>
                             <option value="BRL" id="BRL"> BRL </option>
@@ -110,7 +88,7 @@
             <div class="row">
                 <h1><span class="ExchangeTitle">Exchange</span> RealTime</h1>
             </div>
-            <div class="RealTime" id="realtime">
+            <div class="RealTime">
                 <div class="row">
                     <!--aqui vão as bandeiras-->
                 </div>
@@ -118,20 +96,21 @@
         </div>
         </div>
     </div>
-    </div>
-   
-    <script>
-        $("#form-conversor").submit(function (e) {
-            e.preventDefault();
-            $.ajax({
-                url: "{{ route('converter') }}",
-                data: $("#form-conversor").serialize(),
-                success: function (resposta) {
-                    $("#resultado").html(resposta.value);
-                    $("#cotacao").html(resposta.currency);
-                }
-            });
-        });
-        </script>
+</div>
+<script>
+$("#form-converter").submit(function (e) {
+    e.preventDefault();
+    $.ajax({
+        url: "{{ route('converter') }}",
+        data: $("#form-converter").serialize(),
+        success: function (resposta) {
+            $("#resultado").html(resposta.value);
+            $("#cotacao").html(resposta.currency);
+        }
+    });
+});
+</script>
+
     </body>
     </html>
+    

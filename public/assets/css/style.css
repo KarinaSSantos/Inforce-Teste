@@ -1,21 +1,89 @@
+body{
+    font-family: open sans;
+}
+p{
+    line-height: 1.8em;
+}
+
 .All{
     background-image: url('../img/banner.jpg');
     background-size: cover;
+    min-height: 100vh;
     color: #ffff;
     padding: 0 auto;
     margin: 0 auto;
 }
+.Home{
+    display: flex;
+    align-items: center;
+}
+nav{
+    background-color: #000000a3;;
+       color: #88b44e;
+       
+}
+nav li{
+    margin: 0 15px;
+}
 
+nav a{
+    color: #88b44e;
+}
 
+nav a:hover{
+    color: #fff;
+}
+li.calculadoramenu{
+    background-color: #88b44e;
+    padding: 2px;
+    border-radius: 20px;
+}
+li.calculadoramenu a{
+color: #ffff;
+}    .navbar-brand{
+    background-image: url('../img/logoInfoce.png');
+    background-position: center ;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 50px;
+    margin: 0 15px;
+}
 /*botão*/
-.btn-converter{
+.btn-converter, .btn-converter-home{
     background-color: #88b44e;
     color:#fff;
     border-radius: 50px;
     padding: 10px 30px;
     border: none;   
 }
-
+.btn-converter-home{
+    font-weight: bold;
+}
+.Banner h1{
+    font-weight: bold;
+    font-size: 26px;
+}
+.Banner.Botão{
+    margin: 30px 0px;
+}
+.Home, .Exchange, .RealTime{
+    padding-bottom: 100px;
+    padding-top: 100px;
+    min-height: 100vh;
+}
 .ExchangeTitle{
     color: #88b44e;
+}
+
+.Conheca{
+    margin:20px 0px;
+}
+/*formata inputs*/
+.FormataCampo{
+    padding: 8px;
+    border-radius: 8px;
+    border-color: #ddd3!important;
+    width: 20%;
+    margin: 5px;
 }
