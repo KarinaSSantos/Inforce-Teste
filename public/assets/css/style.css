@@ -1,0 +1,21 @@
+.All{
+    background-image: url('../img/banner.jpg');
+    background-size: cover;
+    color: #ffff;
+    padding: 0 auto;
+    margin: 0 auto;
+}
+
+
+/*botão*/
+.btn-converter{
+    background-color: #88b44e;
+    color:#fff;
+    border-radius: 50px;
+    padding: 10px 30px;
+    border: none;   
+}
+
+.ExchangeTitle{
+    color: #88b44e;
+}
