@@ -1,5 +1,4 @@
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8" />
     <title>Inforce - Software, Site Personalizado e Marketing Digital Avançado
@@ -32,13 +31,16 @@
                 <a href="#">
                     <div class="navbar-brand"></div>
                 </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon MenuBurguer">
+                        ☰
+                    </span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
                             <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#realtime">Exchange RealTime</a>
                         </li>
                         <li class="nav-item calculadoramenu">
                             <a class="nav-link" href="#calculadora">Calculadora</a>
@@ -126,18 +128,6 @@
                 </div>
             </div>
         </div>
-        <!--
-    <div class="RealTime" id="realtime">
-            <div class="row">
-                <h1><span class="ExchangeTitle">Exchange</span> RealTime</h1>
-            </div>
-            <div class="RealTime" id="realtime">
-                <div class="row">
-                   
-                </div>
-            </div>
-        -->
-    </div>
     </div>
     <script>
         $("#form-conversor").submit(function (e) {
@@ -153,5 +143,4 @@
         });
     </script>
 </body>
-
 </html>

@@ -23,6 +23,15 @@ nav{
        color: #88b44e;
        
 }
+.MenuBurguer{
+    color:#88b44e!important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    font-weight: 900;
+}
 nav li{
     margin: 0 15px;
 }
@@ -38,6 +47,9 @@ li.calculadoramenu{
     background-color: #88b44e;
     padding: 2px;
     border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 li.calculadoramenu a{
 color: #ffff;
@@ -108,6 +120,13 @@ color: #ffff;
     border-color: #ddd3!important;
     width: 20%;
     margin: 5px;
+}
+
+@media screen and (max-width: 640px){
+    .FormataCampo{
+        width: 100%;
+        margin-bottom: 18px;
+    }
 }
 
 .Calculadora{
